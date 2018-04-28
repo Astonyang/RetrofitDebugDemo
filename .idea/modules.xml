@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit-adapters/retrofit-adapters.iml" filepath="$PROJECT_DIR$/retrofit-adapters/retrofit-adapters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit-converters/retrofit-converters.iml" filepath="$PROJECT_DIR$/retrofit-converters/retrofit-converters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit-mock/retrofit-mock.iml" filepath="$PROJECT_DIR$/retrofit-mock/retrofit-mock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit2/retrofit2.iml" filepath="$PROJECT_DIR$/retrofit2/retrofit2.iml" />
+    </modules>
+  </component>
+</project>

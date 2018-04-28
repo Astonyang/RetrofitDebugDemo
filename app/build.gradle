@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.astonyang.retrofitdemo"
+        minSdkVersion 15
+        targetSdkVersion 26
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    dexOptions {
+        jumboMode = true
+        javaMaxHeapSize "4g"
+    }
+    // 打包排除以下文件，屏蔽因as自身bug，在没有重复引用jar时，提示jar重复引用的问题
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+}
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':retrofit2')
+//
+    implementation project(':retrofit-adapters')
+    implementation project(':retrofit-converters')
+    implementation project(':retrofit-mock')
+
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation "io.reactivex.rxjava2:rxjava:2.0.0"
+
+    implementation 'com.google.guava:guava:25.0-android'
+    implementation 'javax.xml.bind:jaxb-api:2.2.12'
+    implementation 'com.squareup.moshi:moshi:1.5.0'
+    implementation 'com.squareup.wire:wire-runtime:2.2.0'
+    implementation 'org.simpleframework:simple-xml:2.7.1'
+    implementation 'org.jsoup:jsoup:1.7.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    implementation 'com.google.protobuf:protobuf-java:3.0.0'
+
+}
